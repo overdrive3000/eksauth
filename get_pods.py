@@ -1,10 +1,3 @@
-# EKS Auth
-This is a simple python module that generates a token compatible with Heptio IAM Authenticator.
-
-Using this module you can authenticate against an EKS cluster from a python script without the need of the heptio authenticator binary
-
-## Usage
-```python
 from eksauth import auth
 from kubernetes import client, config
 
@@ -27,10 +20,3 @@ ret = v1.list_pod_for_all_namespaces(watch=False)
 for i in ret.items:
     print("%s\t%s\t%s" % (i.status.pod_ip, i.metadata.namespace, i.metadata.name))
 
-```
-
-## TODO
-* Add Docstrings
-* Add Error Handling
-* Create Tests
-* Create package
